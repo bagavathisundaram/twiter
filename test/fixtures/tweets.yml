@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tweet_message: MyText
+  attachment: one
+  type: 1
+  user: one
+
+two:
+  tweet_message: MyText
+  attachment: two
+  type: 1
+  user: two
