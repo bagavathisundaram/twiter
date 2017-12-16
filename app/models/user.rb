@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tweets
   has_many :followers
+  has_one :attachment, as: :attachments
 end

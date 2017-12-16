@@ -1,5 +1,5 @@
 class Attachment < ApplicationRecord
-
+	belongs_to :attachments, polymorphic: true
   def uploaded_file=(incoming_file)
     self.filename = incoming_file.original_filename
     self.content_type = incoming_file.content_type

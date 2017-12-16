@@ -1,4 +1,4 @@
 class Tweet < ApplicationRecord
-  belongs_to :attachment, optional: true
+  has_one :attachment, as: :attachments
   belongs_to :user
 end

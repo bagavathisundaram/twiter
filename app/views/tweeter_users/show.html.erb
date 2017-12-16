@@ -1,6 +1,6 @@
 Data<br/> 
 <%if @data[:profile_photo].present?%>
-<%= ('<img src="data:image/jpg;base64,%s">' % Base64.encode64(@data[:profile_photo])).html_safe %><br/>
+<img style="width: 10%;top: 0px;right: 0px; position: absolute" <%= (' src="data:image/jpg;base64,%s"' % Base64.encode64(@data[:profile_photo])).html_safe %>><br/>
 <% end%>
 <%= @data[:tweet_count]%>  tweets <br/> <%= @data[:follow_count] %> followers<br/>
 <a href="/tweeter_users/update_profile"> Update Profile Photo</a><br/>
@@ -14,13 +14,13 @@ Data<br/>
 	<a href="twitter_users/<%=tweet.user_id%>/follow">follow <%= User.find(tweet.user_id).email%></a> <br/>
 	<%end%>
 	<% if a.present? %>
-	<%= ('<img src="data:image/jpg;base64,%s">' % Base64.encode64(Attachment.find(a).data)).html_safe %>
+	<img style="width: 10%" <%= (' src="data:image/jpg;base64,%s"' % Base64.encode64(Attachment.find(a).data)).html_safe %>><br/>
 	<% end%>
 	<%if @data[:liked_tweet_ids].index(tweet.id).nil? %>
 	<a href="/tweeter_users/<%=tweet.id%>/like">Like</a><br/>
 	<% end%>
 	<a href="/tweeter_users/<%=tweet.id%>/comment">comment</a><br/>
-	<a href="/tweeter_users/<%=tweet.id%>/retweet">Retweet</a><br/>
+	<a href="/tweeter_users/<%=tweet.id%>/retweet">Retweet</a><br/><br/><br/>
 <%end%>
 <%end%>
 
